@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gerenciador de Tarefas - FATEACTIVIT</h1>
+    </header>
+    <div id="kanban-board">
+        <div class="column">
+            <h2>Pendentes</h2>
+            <div id="pending-list" class="task-list"></div>
+            <button id="add-task-btn">Adicionar Tarefa</button>
+        </div>
+        <div class="column">
+            <h2>Em Andamento</h2>
+            <div id="in-progress-list" class="task-list"></div>
+        </div>
+        <div class="column">
+            <h2>Concluídas</h2>
+            <div id="completed-list" class="task-list"></div>
+        </div>
+    </div>
+
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <form id="task-form">
+                <input type="hidden" id="task-id">
+                <div>
+                    <label for="title">Título:</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div>
+                    <label for="description">Descrição:</label>
+                    <textarea id="description" required></textarea>
+                </div>
+                <div>
+                    <label for="priority">Prioridade:</label>
+                    <select id="priority" required>
+                        <option value="Baixa">Baixa</option>
+                        <option value="Média">Média</option>
+                        <option value="Alta">Alta</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="due-date">Data de Vencimento:</label>
+                    <input type="date" id="due-date" required>
+                </div>
+                <div>
+                    <label for="responsibles">Responsáveis:</label>
+                    <input type="text" id="responsibles" required>
+                </div>
+                <div>
+                    <label for="status">Status:</label>
+                    <select id="status" required>
+                        <option value="Pendente">Pendente</option>
+                        <option value="Em Andamento">Em Andamento</option>
+                        <option value="Concluída">Concluída</option>
+                    </select>
+                </div>
+                <button type="submit">Salvar Tarefa</button>
+            </form>
+        </div>
+    </div>
+    <script src="db.js"></script>
+    <script src="js-app.js"></script>
+</body>
+</html>
